@@ -1,0 +1,58 @@
+{% extends 'common.html' %}
+{% block body %}
+
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">sno</th>
+        <th scope="col">Qquote</th>
+        <th scope="col">Auther</th>
+        <th scope="col">Actions</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      {% for quote in allquote %}
+      <tr>
+        <th scope="Sno">{{loop.index}}</th>
+        <td>{{quote.Qquote}}</td>
+        <td>{{quote.Aauther}}</td>
+        <td>
+          
+            <a style="margin:5px;" onclick="window.location.href='/delete/{{quote.sno}}';myFunction() " type="button" class="btn btn-danger">Remove</button>  
+  
+              <script>
+                function myFunction() {
+                  alert("Information removed sucessfully");
+                }
+                </script>
+  <!--
+            <a style="margin:5px;" onclick="window.location.href='/request';MYFunction() " type="button" class="btn btn-success   ">Request</button>
+              <script>
+                function MYFunction() {
+                  alert("Request Sucessfully sent");
+                }
+                </script>
+  -->
+            <a  onclick="window.location.href='/information'"type="button" class="btn btn-danger  ">information</button>
+  
+          </td>
+      </tr>
+      {% endfor %}
+      
+
+    </tbody>
+  </table>
+
+<!-- Optional JavaScript; choose one of the two! -->
+
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+<!-- Option 2: Separate Popper and Bootstrap JS -->
+<!--
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+-->
+{% endblock body %}

@@ -1,0 +1,42 @@
+{% extends 'common.html' %}
+{% block body %}
+
+
+
+
+<form class="new" style='margin : 20px' action="/" method = "POST">
+
+
+    
+  <p style=" font-size:17px;">Enter Quote or Life Lesson :</p>
+  <p><input type = "text" class="form-control" name = "Quotee" /></p>
+
+  <p style=" font-size:17px;">Enter Author :</p>
+  <p><input type = "text"  class="form-control" name = "Authorr" /></p>
+
+  <button type="submit"  class="btn btn-outline-secondary">Submit</button>
+</form>
+
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">sno</th>
+            <th scope="col">Quote</th>
+            <th scope="col">Auther</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          {% for quote in allquote %}
+          <tr>
+            <th scope="Sno">{{loop.index}}</th>
+            <td>{{quote.Qquote}}</td>
+            <td>{{quote.Aauther}}</td>
+          </tr>
+          {% endfor %}
+          
+
+        </tbody>
+      </table>
+
+{% endblock body %}
